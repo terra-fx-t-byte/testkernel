@@ -12,6 +12,9 @@ struct Char {
     uint8_t color;
 };
 
+static char cursor[128] = ">";
+
+
 struct Char* buffer = (struct Char*) 0xb8000;
 size_t col = 0;
 size_t row = 0;
@@ -174,6 +177,8 @@ void clean_last_char() {
 }
 
 char* get_input(int bufferlength = 256){
+    print_str("\n");
+    print_str(cursor);
     static char initbuffer[256] = {0};
     int initpos = 0;
     while(true){

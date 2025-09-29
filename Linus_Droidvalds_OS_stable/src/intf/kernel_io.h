@@ -33,7 +33,6 @@ void print_str(char* string);
 void print_set_color(uint8_t foreground, uint8_t background);
 void print_newline();
 char getchar();
-//void clean_last_char();
 char* get_input(int bufferlength);
 
 #ifdef __cplusplus

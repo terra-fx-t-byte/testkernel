@@ -8,6 +8,7 @@ extern "C" {
 
 char* inttostr(int value);
 int strfind(char* str, char firstappearance);
+void strreplace(char* str, int index, char repl);
 size_t strsize(char* str);
 
 #ifdef __cplusplus
