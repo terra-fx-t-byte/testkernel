@@ -81,3 +81,36 @@ char* substr(char* str, int startindex, int endindex) {
     output[j] = '\0'; 
     return output;
 }
+
+int strfindsub(char* str, int startindex, char* occurence){
+    int j = 0;
+    int i;
+    int drop = 0;
+    int strsz = strsize(str);
+    int ocsz = strsize(occurence);
+    
+    if (ocsz > strsz || startindex >= strsz || startindex < 0){
+        return -1;
+    }
+    
+    for (i = startindex; i < strsz; i++){
+        if (occurence[j] == str[i]){
+            if (drop == 0) {
+                drop = i;
+            }
+            j++;
+            
+            if (j == ocsz){
+                return drop;
+            }
+        }
+        else {
+            if (drop > 0) {
+                i = drop;
+            }
+            drop = 0;
+            j = 0;
+        }
+    }
+    return -1;
+}
