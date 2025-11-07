@@ -11,11 +11,11 @@ x86_ALL_obj := $(x86_CPP_obj) $(x86_asm_obj)
 
 $(x86_CPP_obj): build/x86_64/%.o : src/implementation/x86_64/%.cpp
 	mkdir -p $(dir $@) && \
-	x86_64-elf-g++ -c -I src/intf -ffreestanding -nostdlib -fno-exceptions -fno-rtti $(patsubst build/x86_64/%.o, src/implementation/x86_64/%.cpp, $@) -o $@ 
+	x86_64-elf-g++ -c -I src/intf -ffreestanding -nostdlib -fno-exceptions -fno-rtti -fpermissive $(patsubst build/x86_64/%.o, src/implementation/x86_64/%.cpp, $@) -o $@ 
 
 $(x86_kernel_obj): build/kernel/%.o : src/implementation/kernel/%.cpp
 	mkdir -p $(dir $@) && \
-	x86_64-elf-g++ -c -I src/intf -ffreestanding -nostdlib -fno-exceptions -fno-rtti $(patsubst build/kernel/%.o, src/implementation/kernel/%.cpp, $@) -o $@ 
+	x86_64-elf-g++ -c -I src/intf -ffreestanding -nostdlib -fno-exceptions -fno-rtti -fpermissive $(patsubst build/kernel/%.o, src/implementation/kernel/%.cpp, $@) -o $@ 
 
 $(x86_asm_obj): build/x86_64/%.o : src/implementation/x86_64/%.asm
 	mkdir -p $(dir $@) && \

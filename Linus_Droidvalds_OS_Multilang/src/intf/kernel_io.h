@@ -34,6 +34,7 @@ void print_set_color(uint8_t foreground, uint8_t background);
 void print_newline();
 char getchar();
 char* get_input(int bufferlength);
+void reset_cursor();
 
 #ifdef __cplusplus
 }

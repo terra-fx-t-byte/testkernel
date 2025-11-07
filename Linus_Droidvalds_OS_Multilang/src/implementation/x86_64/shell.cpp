@@ -4,7 +4,7 @@
 const char* SHELL_ENTRYPOINT = "shell";
 
 
-typedef struct{
+/*typedef struct{
     static char rootname[256];
     unsigned int argsstart;
     unsigned int argend;
@@ -13,4 +13,4 @@ typedef struct{
 
 char* parseinput(char* str){
 
-}
+}*/

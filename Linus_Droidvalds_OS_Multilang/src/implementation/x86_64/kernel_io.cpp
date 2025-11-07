@@ -214,3 +214,8 @@ char* get_input(int bufferlength = 256){
 void print_set_color(uint8_t foreground, uint8_t background) {
     color = foreground + (background << 4);
 }
+
+void reset_cursor() {
+    col = 0;
+    row = 0;
+}
